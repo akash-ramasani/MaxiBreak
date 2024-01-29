@@ -1,13 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, Text, Alert, StyleSheet } from 'react-native';
 
 import Button from './components/UI/Buttons/Button';
 
 export default function App() {
+
+  const handlePress = () => {
+    Alert.alert('Button Pressed', 'You clicked the button!');
+  };
+  
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app</Text>
-      <Button title='Register'/>
+      <Button title='Registrer' onPress={handlePress} style={styles.buttonStyle}/>
       <StatusBar style="auto" />
     </View>
   );
@@ -19,5 +23,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  buttonStyle: {
+    backgroundColor: 'green',
   },
 });
