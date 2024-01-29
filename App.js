@@ -5,14 +5,14 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Login from './screens/Login';
 
-const Stack = createNativeStackNavigator();
+const AuthStack = createNativeStackNavigator();
 
 const App = () =>{
     return (
         <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen name="MaxiBreak" component={Login}/>
-            </Stack.Navigator>
+            <AuthStack.Navigator>
+                <AuthStack.Screen name="Login" component={Login} options={{ headerShown: false }}/>
+            </AuthStack.Navigator>
         </NavigationContainer>
     );
 }
