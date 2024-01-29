@@ -16,7 +16,7 @@ const Login =  () => {
                         source={require('../assets/Login.png')}
                         style={styles.logo}
                     />
-                    <Text style={styles.text}>MaxiBreak</Text>
+                    <Text style={styles.text}>MxBrk</Text>
                 </View>
                 <FormInput
                     autofocus
@@ -38,7 +38,7 @@ const Login =  () => {
                 />
                 <View style={{alignItems: 'center', marginVertical: 20}}>
                     <TouchableOpacity style={styles.forgotButton}>
-                        <Text style={styles.navButtonText}>Forgot Password?</Text>
+                        <Text style={styles.navButtonText}>Forgotten Password?</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.forgotButton}>
                         <Text style={styles.navButtonText}>Don't have an acount? Create here</Text>
@@ -70,12 +70,11 @@ const styles = StyleSheet.create({
         color: '#051d5f',
     },
     forgotButton: {
-        marginVertical: 35,
+        marginVertical: 20,
     },
     navButtonText: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        color: '#2e64e5',
         fontFamily: 'serif',
+        fontSize: 18,
+        color: '#2e64e5'
     },
 });
