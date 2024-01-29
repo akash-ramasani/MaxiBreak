@@ -11,7 +11,7 @@ export default function App() {
   
   return (
     <View style={styles.container}>
-      <Button title='Registrer' onPress={handlePress} style={styles.buttonStyle}/>
+      <Button title='Register' onPress={handlePress} style={styles.buttonStyle}/>
       <StatusBar style="auto" />
     </View>
   );
@@ -25,6 +25,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   buttonStyle: {
-    backgroundColor: 'green',
+    backgroundColor: '#FF5A5F',
   },
 });
