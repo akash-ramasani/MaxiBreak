@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "MaxiBreak",
-    "slug": "MaxiBreak",
+    "slug": "maxibreak",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1b36c5e6-cd19-4ce7-b756-fbfbd891e72c"
+      }
+    },
+    "owner": "akash_ramasani"
   }
 }
