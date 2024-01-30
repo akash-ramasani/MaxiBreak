@@ -3,8 +3,6 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, ScrollView, StyleSheet, Image, Text, TouchableOpacity, View } from 'react-native';
 
-import { LinearGradient } from 'expo-linear-gradient';
-
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 
