@@ -1,23 +1,26 @@
 import React from 'react';
 
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, ScrollView, StyleSheet, Image, Text, TouchableOpacity, View, ToastAndroid } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, Image, Text, TouchableOpacity, View } from 'react-native';
+
+import { LinearGradient } from 'expo-linear-gradient';
 
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 
-const Login =  () => {
+const Login =  ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
-            <StatusBar style="auto" />
+            <StatusBar style="auto"/>
             <ScrollView showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}> 
                 <View style={{alignItems: 'center', marginVertical: 40}}>
+                    <Text style={[styles.text, {fontSize: 36, color: '#FF5A5F'}]}>MxiBrk</Text>
                     <Image
                         source={require('../assets/Login.png')}
                         style={styles.logo}
                     />
-                    <Text style={styles.text}>MxBrk</Text>
                 </View>
+                <Text style={styles.text}>Login</Text>
                 <FormInput
                     autofocus
                     iconType="mail"
@@ -37,7 +40,7 @@ const Login =  () => {
                     buttonTitle="Log In"
                 />
                 <View style={{alignItems: 'center', marginVertical: 20}}>
-                    <TouchableOpacity style={styles.forgotButton}>
+                    <TouchableOpacity style={styles.forgotButton} onPress={() => navigation.navigate('ForgotPassword') }>
                         <Text style={styles.navButtonText}>Forgotten Password?</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.forgotButton}>
