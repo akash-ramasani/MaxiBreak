@@ -13,7 +13,7 @@ const App = () =>{
         <NavigationContainer>
             <AuthStack.Navigator>
                 <AuthStack.Screen name="Login" component={Login} options={{ headerShown: false }}/>
-                <AuthStack.Screen name="ForgotPassword" component={ForgotPassword}/>
+                <AuthStack.Screen name="ForgotPassword" component={ForgotPassword} options={{title: 'Forgot Password'}}/>
             </AuthStack.Navigator>
         </NavigationContainer>
     );
