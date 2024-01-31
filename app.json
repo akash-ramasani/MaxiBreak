@@ -31,6 +31,9 @@
         "projectId": "1b36c5e6-cd19-4ce7-b756-fbfbd891e72c"
       }
     },
-    "owner": "akash_ramasani"
+    "owner": "akash_ramasani",
+    "plugins": [
+      "expo-font"
+    ]
   }
 }
