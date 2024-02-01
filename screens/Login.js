@@ -17,7 +17,6 @@ const Login =  ({ navigation }) => {
                         style={styles.logo}
                     />
                 </View>
-                <Text style={styles.text}>Login</Text>
                 <FormInput
                     autofocus
                     iconType="mail"
