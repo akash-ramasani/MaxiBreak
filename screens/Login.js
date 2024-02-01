@@ -8,9 +8,8 @@ import FormButton from '../components/FormButton';
 
 const Login =  ({ navigation }) => {
     return (
-        <SafeAreaView style={styles.container}>
-            <StatusBar style="auto"/>
-            <ScrollView showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}> 
+        <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
+                <StatusBar style="auto"/>
                 <View style={{alignItems: 'center', marginVertical: 40}}>
                     <Text style={[styles.text, {fontSize: 36, color: '#FF5A5F'}]}>MxiBrk</Text>
                     <Image
@@ -46,7 +45,6 @@ const Login =  ({ navigation }) => {
                     </TouchableOpacity>
                 </View>
             </ScrollView>
-        </SafeAreaView>
     );
 }
 
@@ -57,6 +55,8 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#ffffff",
         paddingHorizontal: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     logo: {
         height: 200,
