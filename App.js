@@ -11,9 +11,9 @@ const AuthStack = createNativeStackNavigator();
 const App = () =>{
     return (
         <NavigationContainer>
-            <AuthStack.Navigator initialRouteName="Login" screenOptions={{}}>
+            <AuthStack.Navigator initialRouteName="Login" screenOptions={() => ({ headerShown: true, headerTitleAlign: 'center' })}>
                 <AuthStack.Screen name="Login" component={Login} options={{ headerShown: false }}/>
-                <AuthStack.Screen name="ForgotPassword" component={ForgotPassword} options={{title: 'Forgot Password'}}/>
+                <AuthStack.Screen name="ForgotPassword" component={ForgotPassword} options={{headerTitle: 'Forgot Passowrd'}}/>
             </AuthStack.Navigator>
         </NavigationContainer>
     );
