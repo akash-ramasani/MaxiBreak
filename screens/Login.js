@@ -54,10 +54,10 @@ export default Login;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#ffffff",
-        paddingHorizontal: 20,
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: "#ffffff",
+        paddingHorizontal: 20,
     },
     logo: {
         height: 200,
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     },
     navButtonText: {
         fontFamily: 'serif',
-        fontSize: 15,
+        fontSize: 16,
         color: '#2e64e5'
     },
 });
