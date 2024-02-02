@@ -1,7 +1,8 @@
 import React from 'react';
 
+import { ScrollView, View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, ScrollView, StyleSheet, Image, Text, TouchableOpacity, View } from 'react-native';
 
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
@@ -19,7 +20,6 @@ const Login =  ({ navigation }) => {
                 </View>
                 <FormInput
                     autofocus
-                    iconType="mail"
                     type="email"
                     placeholderText="Email"
                     keyboardType="email-address"
@@ -27,18 +27,20 @@ const Login =  ({ navigation }) => {
                     autoCorrect={false}
                 />
                 <FormInput
-                    iconType="lock"
                     type="password"
                     placeholderText="Password"
                     secureTextEntry
                 />
-                <FormButton
-                    buttonTitle="Log In"
-                />
-                <View style={{alignItems: 'center', marginVertical: 20}}>
-                    <TouchableOpacity style={styles.forgotButton} onPress={() => navigation.navigate('ForgotPassword') }>
+                
+                <View style={{marginVertical: 5}}>
+                    <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword') }>
                         <Text style={styles.navButtonText}>Forgotten Password?</Text>
                     </TouchableOpacity>
+                </View>
+                
+                <FormButton buttonTitle="Log In" />
+
+                <View style={{alignItems: 'center', marginVertical: 20}}>
                     <TouchableOpacity style={styles.forgotButton}>
                         <Text style={styles.navButtonText}>Don't have an acount? Create here</Text>
                     </TouchableOpacity>
@@ -74,7 +76,7 @@ const styles = StyleSheet.create({
     },
     navButtonText: {
         fontFamily: 'serif',
-        fontSize: 18,
+        fontSize: 15,
         color: '#2e64e5'
     },
 });
