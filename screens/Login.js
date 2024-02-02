@@ -18,6 +18,7 @@ const Login =  ({ navigation }) => {
                         style={styles.logo}
                     />
                 </View>
+
                 <FormInput
                     autofocus
                     type="email"
@@ -26,6 +27,7 @@ const Login =  ({ navigation }) => {
                     autoCapitalize="none"
                     autoCorrect={false}
                 />
+                
                 <FormInput
                     type="password"
                     placeholderText="Password"
@@ -45,6 +47,7 @@ const Login =  ({ navigation }) => {
                         <Text style={styles.navButtonText}>Don't have an acount? Create here</Text>
                     </TouchableOpacity>
                 </View>
+
             </ScrollView>
     );
 }
