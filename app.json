@@ -33,7 +33,12 @@
     },
     "owner": "akash_ramasani",
     "plugins": [
-      "expo-font"
+      [
+        "expo-font",
+        {
+          "fonts": "node_modules/@expo-google-fonts/roboto-slab"
+        }
+      ]
     ]
   }
 }

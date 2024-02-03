@@ -7,27 +7,47 @@ import { ScrollView, StyleSheet } from 'react-native';
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 
-const ForgotPassword =  () => {
+const Register =  () => {
     
     return (
         <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
             <StatusBar style="auto"/>
             <FormInput
                 autofocus
+                type="text"
+                placeholderText="Name"
+                keyboardType="default"
+                autoCapitalize="none"
+                autoCorrect={false}
+            />
+                
+                <FormInput
                 type="email"
                 placeholderText="Email"
                 keyboardType="email-address"
                 autoCapitalize="none"
                 autoCorrect={false}
             />
+                <FormInput
+                    type="password"
+                    placeholderText="Password"
+                    secureTextEntry
+                />
+
+                <FormInput
+                    type="password"
+                    placeholderText="Confirm Password"
+                    secureTextEntry
+                />
+            
             <FormButton
-                buttonTitle="Send OTP"
+                buttonTitle="Create Account"
             />
         </ScrollView>
     );
 }
 
-export default ForgotPassword;
+export default Register;
 
 const styles = StyleSheet.create({
     container: {

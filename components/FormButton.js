@@ -26,9 +26,8 @@ const styles = StyleSheet.create({
         borderRadius: 5,
     },
     buttonText: {
+        fontFamily: 'RobotoSlab_500Medium',
         fontSize: 18,
-        fontWeight: 'bold',
         color: '#ffffff',
-        fontFamily: 'serif',
     },
 });
