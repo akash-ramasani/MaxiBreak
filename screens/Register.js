@@ -33,12 +33,6 @@ const Register =  () => {
                     placeholderText="Password"
                     secureTextEntry
                 />
-
-                <FormInput
-                    type="password"
-                    placeholderText="Confirm Password"
-                    secureTextEntry
-                />
             
             <FormButton
                 buttonTitle="Create Account"

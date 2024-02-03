@@ -2,13 +2,15 @@ import React from 'react';
 
 import { StatusBar } from 'expo-status-bar';
 
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, useColorScheme  } from 'react-native';
 
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 
 const ForgotPassword =  () => {
     
+    console.log(useColorScheme());
+
     return (
         <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
             <StatusBar style="auto"/>

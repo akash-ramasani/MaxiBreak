@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ScrollView, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { ScrollView, View, Text, TouchableOpacity, StyleSheet, useColorScheme  } from 'react-native';
 
 import { StatusBar } from 'expo-status-bar';
 
@@ -10,6 +10,7 @@ import FormButton from '../components/FormButton';
 import { useFonts, RobotoSlab_300Light, RobotoSlab_500Medium, RobotoSlab_800ExtraBold } from '@expo-google-fonts/roboto-slab';
 
 const Login =  ({ navigation }) => {
+
     let [fontsLoaded, fontError] = useFonts({
         RobotoSlab_800ExtraBold,
         RobotoSlab_500Medium,
@@ -19,7 +20,7 @@ const Login =  ({ navigation }) => {
     if (!fontsLoaded && !fontError) {
         return null;
     }
-    
+
     return (
         <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
                 <StatusBar style="auto"/>
