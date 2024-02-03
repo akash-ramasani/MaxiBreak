@@ -9,23 +9,21 @@ import FormButton from '../components/FormButton';
 
 const ForgotPassword =  () => {
     return (
-        <SafeAreaView style={styles.container}>
+        <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
             <StatusBar style="auto"/>
-            <ScrollView showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
-                <FormInput
-                    autofocus
-                    iconType="mail"
-                    type="email"
-                    placeholderText="Email"
-                    keyboardType="email-address"
-                    autoCapitalize="none"
-                    autoCorrect={false}
-                />
-                <FormButton
-                    buttonTitle="Send OTP"
-                />
-            </ScrollView>
-        </SafeAreaView>
+            <FormInput
+                autofocus
+                iconType="mail"
+                type="email"
+                placeholderText="Email"
+                keyboardType="email-address"
+                autoCapitalize="none"
+                autoCorrect={false}
+            />
+            <FormButton
+                buttonTitle="Send OTP"
+            />
+        </ScrollView>
     );
 }
 
@@ -35,6 +33,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#ffffff",
-        padding: 20,
-    }
+        paddingHorizontal: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
 });
