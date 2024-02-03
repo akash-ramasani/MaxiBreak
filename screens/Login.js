@@ -14,11 +14,12 @@ const Login =  ({ navigation }) => {
         RobotoSlab_800ExtraBold,
         RobotoSlab_500Medium,
         RobotoSlab_300Light,
-      });
+    });
     
-      if (!fontsLoaded && !fontError) {
+    if (!fontsLoaded && !fontError) {
         return null;
-      }
+    }
+    
     return (
         <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
                 <StatusBar style="auto"/>
