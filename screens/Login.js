@@ -32,7 +32,7 @@ const Login =  ({ navigation }) => {
                 <FormInput
                     autofocus
                     type="email"
-                    placeholderText="Email"
+                    placeholderText="Email Address"
                     keyboardType="email-address"
                     autoCapitalize="none"
                     autoCorrect={false}

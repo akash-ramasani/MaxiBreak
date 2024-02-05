@@ -12,10 +12,10 @@ const App = () =>{
     
     return (
         <NavigationContainer>
-            <AuthStack.Navigator initialRouteName="Login" screenOptions={() => ({ headerShown: true, headerTitleAlign: 'center' })}>
-                <AuthStack.Screen name="Login" component={Login} options={{ headerShown: false }}/>
-                <AuthStack.Screen name="Register" component={Register} options={{ headerTitle: 'Register' }}/>
-                <AuthStack.Screen name="ForgotPassword" component={ForgotPassword} options={{ headerTitle: 'Forgot Password' }}/>
+            <AuthStack.Navigator initialRouteName="Login" screenOptions={() => ({ headerShown: false })}>
+                <AuthStack.Screen name="Login" component={Login} />
+                <AuthStack.Screen name="Register" component={Register} />
+                <AuthStack.Screen name="ForgotPassword" component={ForgotPassword} />
             </AuthStack.Navigator>
         </NavigationContainer>
     );
