@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { useColorScheme } from 'react-native';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -9,7 +11,8 @@ import Register from './screens/Register';
 
 const AuthStack = createNativeStackNavigator();
 const App = () =>{
-    
+    const colorScheme = useColorScheme();
+    console.log(colorScheme);
     return (
         <NavigationContainer>
             <AuthStack.Navigator initialRouteName="Login" screenOptions={() => ({ headerShown: false })}>
