@@ -29,7 +29,7 @@ const ForgotPassword = ({navigation}) => {
         >
             <StatusBar style="auto"/>
             <FormInput {...emailInputProps} />
-            <FormButton buttonTitle="Send email" />
+            <FormButton buttonTitle="Reset Password" />
             <NavLink linkText="Already have an account? Login here" onPress={navigateToLogin} />
         </ScrollView>
     );

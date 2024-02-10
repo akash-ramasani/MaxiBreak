@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, Text, StyleSheet } from 'react-native';
 
 import FormInput from '../../components/FormInput';
 import FormButton from '../../components/FormButton';
@@ -26,6 +26,9 @@ const Register = ({ navigation }) => {
                 />
             ))}
             <FormButton buttonTitle="Create account" />
+            
+            <Text style={{color:'grey'}}>By registering, you agree to our Terms of Service and Privacy Policy.</Text>
+            
             <NavLink linkText="Already have an account? Login here" onPress={navigateToLogin} />
         </ScrollView>
     );

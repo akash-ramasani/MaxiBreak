@@ -1,15 +1,27 @@
 import React, { useState } from 'react';
+
 import { ScrollView, View, Text, StyleSheet } from 'react-native';
+
 import { StatusBar } from 'expo-status-bar';
-import { useFonts, RobotoSlab_400Regular, RobotoSlab_500Medium, RobotoSlab_600SemiBold, RobotoSlab_900Black } from '@expo-google-fonts/roboto-slab';
+
+import { useFonts, RobotoSlab_300Light, RobotoSlab_400Regular, RobotoSlab_500Medium, RobotoSlab_600SemiBold, RobotoSlab_900Black } from '@expo-google-fonts/roboto-slab';
 
 import FormInput from '../../components/FormInput'
 import FormButton from '../../components/FormButton';
 import NavLink from '../../components/NavLink';
 
 const Login = ({ navigation }) => {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  
+  const handleLogin = () => {
+    console.log(email);
+  };
+
   // Load custom fonts
   let [fontsLoaded] = useFonts({
+    RobotoSlab_300Light,
     RobotoSlab_400Regular,
     RobotoSlab_500Medium,
     RobotoSlab_600SemiBold,
@@ -27,16 +39,17 @@ const Login = ({ navigation }) => {
   return (
     <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
       <StatusBar style="auto" />
+
       <View style={styles.header}>
         <Text style={styles.headerText}>Maxi Break</Text>
       </View>
 
-      <FormInput autofocus type="email" placeholderText="Email Address" keyboardType="email-address" autoCapitalize="none" autoCorrect={false} />
+      <FormInput autofocus type="email" placeholderText="Email Address" keyboardType="email-address" autoCapitalize="none" autoCorrect={false} onChangeText={text => setEmail(text)} />
       <FormInput type="password" placeholderText="Password" isPassword={true}/>
       
-      <NavLink linkText="Forgotten Password?" onPress={navigateToForgotPassword} customStyles={styles.navLink} />
+      <NavLink linkText="Forgotten Password?" onPress={navigateToForgotPassword} customStyles={styles.navLink} onChangeText={text => setPassword(text)}/>
       
-      <FormButton buttonTitle="Log in" />
+      <FormButton buttonTitle="Log in" onPress={handleLogin}/>
       
       <NavLink linkText="Don't have an account? Create here" onPress={navigateToRegister} />
 
