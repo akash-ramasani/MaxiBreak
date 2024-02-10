@@ -16,17 +16,16 @@ export default FormButton;
 
 const styles = StyleSheet.create({
     buttonContainer: {
-        marginTop: 10,
-        width: '100%',
         height: windowHeight / 15,
-        backgroundColor: '#252525',
-        padding: 10,
+        width: '100%',
+        marginVertical: 10,
+        borderRadius: 5,
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 5,
+        backgroundColor: '#252525',
     },
     buttonText: {
-        fontFamily: 'RobotoSlab_500Medium',
+        fontFamily: 'RobotoSlab_600SemiBold',
         fontSize: 18,
         color: '#ffffff',
     },
