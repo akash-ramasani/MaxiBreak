@@ -6,8 +6,9 @@ import { ScrollView, StyleSheet } from 'react-native';
 
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
+import NavLink from '../components/NavLink';
 
-const ForgotPassword = () => {
+const ForgotPassword = ({navigation}) => {
     // This structure allows for easy expansion if more input fields are needed in the future.
     const emailInputProps = {
         autofocus: true,
@@ -18,6 +19,8 @@ const ForgotPassword = () => {
         autoCorrect: false,
     };
 
+    const navigateToLogin = () => navigation.navigate('Login');
+
     return (
         <ScrollView 
             contentContainerStyle={styles.container} 
@@ -26,7 +29,8 @@ const ForgotPassword = () => {
         >
             <StatusBar style="auto"/>
             <FormInput {...emailInputProps} />
-            <FormButton buttonTitle="Send OTP" />
+            <FormButton buttonTitle="Send email" />
+            <NavLink linkText="Already have an account? Login here" onPress={navigateToLogin} />
         </ScrollView>
     );
 }

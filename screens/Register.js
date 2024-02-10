@@ -1,15 +1,19 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView, StyleSheet } from 'react-native';
+
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
+import NavLink from '../components/NavLink';
 
-const Register = () => {
+const Register = ({ navigation }) => {
     const inputFields = [
         { type: 'text', placeholderText: 'Name', keyboardType: 'default', autoCapitalize: 'none', autoCorrect: false },
         { type: 'email', placeholderText: 'Email', keyboardType: 'email-address', autoCapitalize: 'none', autoCorrect: false },
         { type: 'password', placeholderText: 'Password', isPassword: true }
     ];
+
+    const navigateToLogin = () => navigation.navigate('Login');
 
     return (
         <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
@@ -21,7 +25,8 @@ const Register = () => {
                     {...input}
                 />
             ))}
-            <FormButton buttonTitle="Create Account" />
+            <FormButton buttonTitle="Create account" />
+            <NavLink linkText="Already have an account? Login here" onPress={navigateToLogin} />
         </ScrollView>
     );
 };

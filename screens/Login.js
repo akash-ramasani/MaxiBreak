@@ -2,6 +2,7 @@ import React from 'react';
 import { ScrollView, View, Text, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts, RobotoSlab_400Regular, RobotoSlab_500Medium, RobotoSlab_600SemiBold, RobotoSlab_900Black } from '@expo-google-fonts/roboto-slab';
+
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 import NavLink from '../components/NavLink';
@@ -20,7 +21,7 @@ const Login = ({ navigation }) => {
     return null;
   }
 
-  
+
   const navigateToForgotPassword = () => navigation.navigate('ForgotPassword');
   const navigateToRegister = () => navigation.navigate('Register');
 
@@ -36,7 +37,7 @@ const Login = ({ navigation }) => {
       
       <NavLink linkText="Forgotten Password?" onPress={navigateToForgotPassword} customStyles={styles.navLink} />
       
-      <FormButton buttonTitle="Log In" />
+      <FormButton buttonTitle="Log in" />
       
       <NavLink linkText="Don't have an account? Create here" onPress={navigateToRegister} />
 
