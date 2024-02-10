@@ -2,9 +2,9 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView, StyleSheet } from 'react-native';
 
-import FormInput from '../components/FormInput';
-import FormButton from '../components/FormButton';
-import NavLink from '../components/NavLink';
+import FormInput from '../../components/FormInput';
+import FormButton from '../../components/FormButton';
+import NavLink from '../../components/NavLink';
 
 const Register = ({ navigation }) => {
     const inputFields = [

@@ -4,9 +4,9 @@ import { StatusBar } from 'expo-status-bar';
 
 import { ScrollView, StyleSheet } from 'react-native';
 
-import FormInput from '../components/FormInput';
-import FormButton from '../components/FormButton';
-import NavLink from '../components/NavLink';
+import FormInput from '../../components/FormInput';
+import FormButton from '../../components/FormButton';
+import NavLink from '../../components/NavLink';
 
 const ForgotPassword = ({navigation}) => {
     // This structure allows for easy expansion if more input fields are needed in the future.

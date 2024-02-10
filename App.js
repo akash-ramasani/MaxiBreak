@@ -3,9 +3,9 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Login from './screens/Login';
-import ForgotPassword from './screens/ForgotPassword';
-import Register from './screens/Register';
+import Login from './screens/Auth/Login';
+import ForgotPassword from './screens/Auth/ForgotPassword';
+import Register from './screens/Auth/Register';
 
 const AuthStack = createNativeStackNavigator();
 const App = () =>{
