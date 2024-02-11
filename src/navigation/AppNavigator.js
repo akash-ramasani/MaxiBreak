@@ -25,7 +25,7 @@ const MainStack = createNativeStackNavigator();
 const Main = () => {
     return (
         <MainStack.Navigator initialRouteName="Home">
-            <MainStack.Screen name="Home" component={HomeScreen}/>
+            <MainStack.Screen name="Home" component={HomeScreen} options={() => ({ headerShown: false })}/>
         </MainStack.Navigator>
     );
 }

@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { Text } from 'react-native';
+import { View } from 'react-native';
 
 const Login = ({ navigation }) => {
     return (
-        <Text>Home Screen</Text>
+        <View>
+
+        </View>
     );
 };
 
