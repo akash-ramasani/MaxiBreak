@@ -4,7 +4,7 @@ import { View, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Feather';
 
-import { windowHeight } from '../utils/Dimensions';
+import { windowHeight } from '../../utils/Dimensions';
 
 const FormInput = memo(({ labelValue, placeholderText, iconType, isPassword, ...rest }) => {
   const [showPassword, setShowPassword] = useState(false);

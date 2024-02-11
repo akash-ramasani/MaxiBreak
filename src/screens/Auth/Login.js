@@ -4,9 +4,9 @@ import { ScrollView, View, Text, StyleSheet } from 'react-native';
 
 import { StatusBar } from 'expo-status-bar';
 
-import FormInput from '../../components/FormInput'
-import FormButton from '../../components/FormButton';
-import NavLink from '../../components/NavLink';
+import FormInput from '../../components/atoms/FormInput';
+import FormButton from '../../components/atoms/FormButton';
+import NavLink from '../../components/atoms//NavLink';
 
 const Login = ({ navigation }) => {
 
