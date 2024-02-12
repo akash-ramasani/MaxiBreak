@@ -1,12 +1,14 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // Screens
 import Login from '../screens/Auth/Login';
 import ForgotPassword from '../screens/Auth/ForgotPassword';
 import Register from '../screens/Auth/Register';
 import HomeScreen from '../screens/HomeScreen';
+import SettingsScreen from '../screens/SettingsScreen';
 
 // Stack Navigators
 const Stack = createNativeStackNavigator();
@@ -20,11 +22,14 @@ const AuthStack = () => (
     </Stack.Navigator>
 );
 
+const Tab = createBottomTabNavigator();
+
 // Main Stack
 const MainStack = () => (
-    <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
-    </Stack.Navigator>
+    <Tab.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
+        <Tab.Screen name="Home" component={HomeScreen}/>
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+    </Tab.Navigator>
 );
 
 // Main Component

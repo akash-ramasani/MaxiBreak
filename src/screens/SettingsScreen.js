@@ -2,13 +2,13 @@ import React from 'react';
 
 import { View, Text, StatusBar } from 'react-native';
 
-const Home = () => {
+const Settings = () => {
     return (
         <View>
              <StatusBar style="auto"/>
-             <Text>Home Screen</Text>
+             <Text>Settings Screen</Text>
         </View>
     );
 };
 
-export default Home;
+export default Settings;
