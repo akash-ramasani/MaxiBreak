@@ -10,29 +10,28 @@ import Register from '../screens/Auth/Register';
 import HomeScreen from '../screens/HomeScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
-// Stack Navigators
+// Unified Navigator Setup
 const Stack = createNativeStackNavigator();
-
-// Auth Stack
-const AuthStack = () => (
-    <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Register" component={Register} />
-        <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
-    </Stack.Navigator>
-);
-
 const Tab = createBottomTabNavigator();
 
-// Main Stack
-const MainStack = () => (
-    <Tab.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
-        <Tab.Screen name="Home" component={HomeScreen}/>
-        <Tab.Screen name="Settings" component={SettingsScreen} />
-    </Tab.Navigator>
+// Auth Stack Navigator
+const AuthStack = () => (
+  <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
+    <Stack.Screen name="Login" component={Login} />
+    <Stack.Screen name="Register" component={Register} />
+    <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+  </Stack.Navigator>
 );
 
-// Main Component
+// Main Tab Navigator
+const MainStack = () => (
+  <Tab.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
+    <Tab.Screen name="Home" component={HomeScreen}/>
+    <Tab.Screen name="Settings" component={SettingsScreen} />
+  </Tab.Navigator>
+);
+
+// Main Application Component
 const App = () => {
     const user = true;
 
