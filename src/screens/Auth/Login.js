@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 import { ScrollView, View, Text, StyleSheet } from 'react-native';
 
-import { StatusBar } from 'expo-status-bar';
-
 import FormInput from '../../components/atoms/FormInput';
 import FormButton from '../../components/atoms/FormButton';
 import NavLink from '../../components/atoms//NavLink';
@@ -22,7 +20,6 @@ const Login = ({ navigation }) => {
 
   return (
     <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
-      <StatusBar style="auto" />
 
       <View style={styles.header}>
         <Text style={styles.headerText}>Maxi Break</Text>

@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { StatusBar } from 'expo-status-bar';
-
 import { ScrollView, StyleSheet } from 'react-native';
 
 import FormInput from '../../components/atoms/FormInput';
@@ -19,7 +17,6 @@ const Register = ({ navigation }) => {
 
     return (
         <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
-            <StatusBar style="auto"/>
             {inputFields.map((input, index) => (
                 <FormInput
                     key={index}

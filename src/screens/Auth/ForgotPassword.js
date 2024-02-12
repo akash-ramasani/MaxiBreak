@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { StatusBar } from 'expo-status-bar';
-
 import { ScrollView, StyleSheet } from 'react-native';
 
 import FormInput from '../../components/atoms/FormInput';
@@ -27,7 +25,6 @@ const ForgotPassword = ({navigation}) => {
             showsVerticalScrollIndicator={false} 
             showsHorizontalScrollIndicator={false}
         >
-            <StatusBar style="auto"/>
             <FormInput {...emailInputProps} />
             <FormButton buttonTitle="Reset password" />
             <NavLink linkText="Already have an account? Login here" onPress={navigateToLogin} />
