@@ -11,7 +11,7 @@ import NavLink from '../../components/atoms//NavLink';
 const Register = ({ navigation }) => {
     const inputFields = [
         { type: 'text', placeholderText: 'Name', keyboardType: 'default', autoCapitalize: 'none', autoCorrect: false },
-        { type: 'email', placeholderText: 'Email', keyboardType: 'email-address', autoCapitalize: 'none', autoCorrect: false },
+        { type: 'email', placeholderText: 'Email Address', keyboardType: 'email-address', autoCapitalize: 'none', autoCorrect: false },
         { type: 'password', placeholderText: 'Password', isPassword: true }
     ];
 
