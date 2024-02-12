@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { View } from 'react-native';
+import { View, StatusBar } from 'react-native';
 
-const Login = ({ navigation }) => {
+const Login = () => {
     return (
-        <View>
-
+        <View style={{flex:1, backgroundColor: 'pink'}}>
+            <StatusBar style='auto'/>
         </View>
     );
 };
