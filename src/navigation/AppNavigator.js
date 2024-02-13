@@ -53,8 +53,8 @@ const MainStack = () => (
       tabBarStyle: { height: windowHeight/15, position: 'relative' },
       tabBarLabelStyle: { fontFamily: 'RobotoSlab_400Regular' },
 
-      tabBarActiveTintColor: 'black',
-      tabBarInactiveTintColor: 'grey',
+      tabBarActiveTintColor: '#FF5A5F',
+      tabBarInactiveTintColor: '#6D6D64',
 
       tabBarActiveBackgroundColor: 'white',
 
