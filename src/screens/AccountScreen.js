@@ -8,9 +8,10 @@ const Account = () => {
     const insets = useSafeAreaInsets();
     return (
         <View style={[styles.container, {paddingTop: insets.top}]}>
+
             <View style={{flex:0.25, padding: 10, backgroundColor: 'blue'}}>
 
-                <View style={{flex: 3, backgroundColor: 'pink'}}>
+                <View style={{flex: 3, backgroundColor: 'pink', borderRadius: 5}}>
                     <Text style={{fontFamily: 'RobotoSlab_900Black', fontSize: 30}}>Account</Text>
                 </View>
 
@@ -23,6 +24,8 @@ const Account = () => {
                         <Text style={{fontFamily: 'RobotoSlab_500Medium', fontSize: 26}}>Akash Ramasani</Text>
                     </View>
                 </View>
+
+
             </View>
 
             
@@ -35,6 +38,7 @@ export default Account;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        justifyContent :'center'
     }
 });
