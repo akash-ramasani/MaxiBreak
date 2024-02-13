@@ -23,7 +23,7 @@ const Home = () => {
       }, []);
     return (
         <View style={[styles.container, {paddingTop: insets.top}]}>
-             <Text style={{fontFamily: 'RobotoSlab_400Regular'}}>Home Screen</Text>
+            <Text style={{fontFamily: 'RobotoSlab_400Regular'}}>Home Screen</Text>
         </View>
     );
 };
