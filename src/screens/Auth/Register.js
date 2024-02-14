@@ -1,44 +1,119 @@
-import React from 'react';
-
-import { ScrollView, StyleSheet } from 'react-native';
-
+import React, { useState } from 'react';
+import { ScrollView, StyleSheet, ActivityIndicator, Platform, ToastAndroid, } from 'react-native';
 import FormInput from '../../components/atoms/FormInput';
 import FormButton from '../../components/atoms/FormButton';
-import NavLink from '../../components/atoms//NavLink';
+import NavLink from '../../components/atoms/NavLink';
+import Toast from 'react-native-toast-message'; // Import the toast library
+import { supabase } from '../../config/supabase';
 
 const Register = ({ navigation }) => {
-    const inputFields = [
-        { type: 'text', placeholderText: 'Name', keyboardType: 'default', autoCapitalize: 'none', autoCorrect: false },
-        { type: 'email', placeholderText: 'Email Address', keyboardType: 'email-address', autoCapitalize: 'none', autoCorrect: false },
-        { type: 'password', placeholderText: 'Password', isPassword: true }
-    ];
+    const [formData, setFormData] = useState({
+        name: '',
+        phoneNumber: '',
+        email: '',
+        password: '',
+    });
+    const [loading, setLoading] = useState(false); // Loading state
 
-    const navigateToLogin = () => navigation.navigate('Login');
+    // Update form state
+    const updateInput = (key, value) => {
+        setFormData({ ...formData, [key]: value });
+    };
+
+    const handleSignUp = async () => {
+        setLoading(true); // Start loading
+        const { name, phoneNumber, email, password } = formData;
+
+        const { user, error: signupError } = await supabase.auth.signUp({
+            email,
+            password,
+        });
+        console.log({ user, signupError });
+    
+        if (signupError) {
+            showToast(signupError.message);
+            setLoading(false);
+            return;
+        }
+
+        if (user) {
+            const { error: updateError } = await supabase.auth.update({
+                data: { name: name, phone: phoneNumber },
+            });
+    
+            if (updateError) {
+                showToast(updateError.message);
+                setLoading(false); // Stop loading on error
+                return;
+            }
+    
+            showToast('Signup successful!');
+            navigation.navigate('Login');
+        }
+        setLoading(false); // Stop loading on success or if we somehow miss the conditions
+    };
+    
+    // Helper function to show toast messages
+    const showToast = (message) => {
+        if (Platform.OS === 'android') {
+            ToastAndroid.show(message, ToastAndroid.LONG);
+        } else {
+            Toast.show({
+                type: 'error', // You can choose different types depending on your toast setup
+                position: 'bottom',
+                text1: message,
+            });
+        }
+    };
 
     return (
-        <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
-            {inputFields.map((input, index) => (
-                <FormInput
-                    key={index}
-                    autofocus={index === 0}
-                    {...input}
-                />
-            ))}
-            <FormButton buttonTitle="Create account" />
-            
-            <NavLink linkText="Already have an account? Login here" onPress={navigateToLogin} />
+        <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
+            <FormInput
+                placeholderText="Name"
+                onChangeText={(text) => updateInput('name', text)}
+                autoCapitalize="words"
+                autoComplete="name"
+            />
+            <FormInput
+                placeholderText="Phone Number"
+                onChangeText={(text) => updateInput('phoneNumber', text)}
+                keyboardType="phone-pad"
+                autoComplete="tel"
+            />
+            <FormInput
+                placeholderText="Email Address"
+                onChangeText={(text) => updateInput('email', text)}
+                keyboardType="email-address"
+                autoCapitalize="none"
+                autoComplete="email"
+            />
+            <FormInput
+                type="password"
+                placeholderText="Password"
+                isPassword={true}
+                autoComplete="password"
+                onChangeText={(text) => updateInput('password', text)}
+            />
+            <FormButton 
+                buttonTitle={loading ? <ActivityIndicator color="#fff" /> : "Create account"} 
+                onPress={handleSignUp} 
+                disabled={loading}
+            />
+            <NavLink linkText="Already have an account? Login here" onPress={() => navigation.navigate('Login')} />
+            <Toast />
         </ScrollView>
     );
 };
 
-export default Register;
-
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#ffffff',
-        paddingHorizontal: 20,
+        flexGrow: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        padding: 20,
+        backgroundColor: '#ffffff',
     },
+    // Include any other styles you might have here
 });
+
+export default Register;

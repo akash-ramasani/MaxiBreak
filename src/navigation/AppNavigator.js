@@ -58,7 +58,7 @@ const MainStack = () => (
 );
 
 const App = () => {
-  const user = true; // Consider replacing this with dynamic auth status
+  const user = !true; // Consider replacing this with dynamic auth status
   return (
     <>
       <StatusBar style="dark" backgroundColor='#ffffff' animated hidden={false} />

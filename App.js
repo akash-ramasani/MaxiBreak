@@ -1,10 +1,11 @@
 import React from 'react';
 
 import { useFonts, RobotoSlab_400Regular, RobotoSlab_500Medium, RobotoSlab_600SemiBold, RobotoSlab_900Black } from '@expo-google-fonts/roboto-slab';
+import Toast from 'react-native-toast-message'; // Import Toast
 
 import AppNavigator from './src/navigation/AppNavigator';
 
-const App = () =>{
+const App = () => {
 
     // Load custom fonts
     let [fontsLoaded] = useFonts({
@@ -20,7 +21,10 @@ const App = () =>{
     }
 
     return (
-        <AppNavigator/>
+        <>
+            <AppNavigator />
+            <Toast />
+        </>
     );
 }
 
