@@ -28,8 +28,7 @@
     "react-native-toast-message": "^2.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0",
-    "react-native-dotenv": "^3.4.10"
+    "@babel/core": "^7.20.0"
   },
   "private": true
 }

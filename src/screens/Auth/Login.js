@@ -1,42 +1,54 @@
-import React, { useState } from 'react';
-
+import React, { useState, useCallback } from 'react';
 import { ScrollView, View, Text, StyleSheet } from 'react-native';
-
 import FormInput from '../../components/atoms/FormInput';
 import FormButton from '../../components/atoms/FormButton';
-import NavLink from '../../components/atoms//NavLink';
+import NavLink from '../../components/atoms/NavLink';
 
-const Login = ({ navigation }) => {
-
+// Use React.memo to prevent unnecessary re-renders
+const Login = React.memo(({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  
-  const handleLogin = () => {
-    console.log(email);
-  };
 
-  const navigateToForgotPassword = () => navigation.navigate('ForgotPassword');
-  const navigateToRegister = () => navigation.navigate('Register');
+  // Use useCallback to memoize the handler and prevent it from being recreated on every render
+  const handleLogin = useCallback(() => {
+    console.log(email, password);
+  }, [email, password]); // Dependencies ensure function is updated when email or password changes
 
   return (
-    <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
-
+    <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.header}>
         <Text style={styles.headerText}>Maxi Break</Text>
       </View>
 
-      <FormInput autofocus type="email" placeholderText="Email Address" keyboardType="email-address" autoCapitalize="none" autoCorrect={false} onChangeText={text => setEmail(text)} />
-      <FormInput type="password" placeholderText="Password" isPassword={true}/>
+      <FormInput
+        autoFocus
+        placeholder="Email Address"
+        keyboardType="email-address"
+        autoCapitalize="none"
+        autoCorrect={false}
+        onChangeText={setEmail}
+      />
+      <FormInput
+        placeholder="Password"
+        secureTextEntry={true}
+        onChangeText={setPassword}
+      />
       
-      <NavLink linkText="Forgotten Password?" onPress={navigateToForgotPassword} customStyles={styles.navLink} onChangeText={text => setPassword(text)}/>
+      <NavLink
+        linkText="Forgotten Password?"
+        onPress={() => navigation.navigate('ForgotPassword')}
+        customStyles={styles.navLink}
+      />
       
-      <FormButton buttonTitle="Log in" onPress={handleLogin}/>
+      <FormButton buttonTitle="Log in" onPress={handleLogin} />
       
-      <NavLink linkText="Don't have an account? Create here" onPress={navigateToRegister} />
-
+      <NavLink
+        linkText="Don't have an account? Create here"
+        onPress={() => navigation.navigate('Register')}
+      />
     </ScrollView>
   );
-};
+});
 
 export default Login;
 

@@ -16,20 +16,19 @@ import Account from '../screens/AccountScreen';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const ICON_NAMES = {
-  Home: 'house',
-  Account: 'user',
-};
+// Constants
+const ICONS = { Home: 'house', Account: 'user' };
+const TAB_BAR_STYLE = { height: windowHeight / 15, position: 'relative' };
+const TAB_BAR_LABEL_STYLE = { fontFamily: 'RobotoSlab_400Regular' };
+const ACTIVE_TINT_COLOR = '#FF5A5F';
+const INACTIVE_TINT_COLOR = '#6D6D64';
 
-const tabBarIcon = ({ route, color, size }) => (
-  <FontAwesome6 name={ICON_NAMES[route.name]} size={size} color={color} solid />
+// Helper Functions
+const createTabBarIcon = (route, color, size) => (
+  <FontAwesome6 name={ICONS[route.name]} size={size} color={color} solid />
 );
 
-const tabBarStyle = { height: windowHeight / 15, position: 'relative' };
-const tabBarLabelStyle = { fontFamily: 'RobotoSlab_400Regular' };
-const tabBarActiveTintColor = '#FF5A5F';
-const tabBarInactiveTintColor = '#6D6D64';
-
+// Stack Navigators
 const AuthStack = () => (
   <Stack.Navigator screenOptions={{ headerShown: false }}>
     <Stack.Screen name="Login" component={Login} />
@@ -43,13 +42,12 @@ const MainStack = () => (
     initialRouteName="Home"
     screenOptions={({ route }) => ({
       headerShown: false,
-      tabBarIcon: props => tabBarIcon({ route, ...props }),
-      tabBarStyle,
-      tabBarLabelStyle,
-      tabBarActiveTintColor,
-      tabBarInactiveTintColor,
+      tabBarIcon: ({ color, size }) => createTabBarIcon(route, color, size),
+      tabBarStyle: TAB_BAR_STYLE,
+      tabBarLabelStyle: TAB_BAR_LABEL_STYLE,
+      tabBarActiveTintColor: ACTIVE_TINT_COLOR,
+      tabBarInactiveTintColor: INACTIVE_TINT_COLOR,
       tabBarShowLabel: false,
-      tabBarLabelPosition: 'below-icon',
     })}
   >
     <Tab.Screen name="Home" component={Home} />
@@ -57,15 +55,14 @@ const MainStack = () => (
   </Tab.Navigator>
 );
 
+// App Component
 const App = () => {
-  const user = !true; // Consider replacing this with dynamic auth status
+  const isAuthenticated = !false; // Replace with actual authentication logic
   return (
-    <>
-      <StatusBar style="dark" backgroundColor='#ffffff' animated hidden={false} />
-      <NavigationContainer>
-        {user ? <MainStack /> : <AuthStack />}
-      </NavigationContainer>
-    </>
+    <NavigationContainer>
+      <StatusBar style="dark" backgroundColor="#ffffff" animated />
+      {isAuthenticated ? <MainStack /> : <AuthStack />}
+    </NavigationContainer>
   );
 };
 
