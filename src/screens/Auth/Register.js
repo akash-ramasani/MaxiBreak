@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useState } from "react";
+
 import { ScrollView, StyleSheet } from 'react-native';
+
+import RadioButtonGroup, { RadioButtonItem } from "expo-radio-button";
+
 import FormInput from '../../components/atoms/FormInput';
 import FormButton from '../../components/atoms/FormButton';
 import NavLink from '../../components/atoms/NavLink';
@@ -13,7 +17,7 @@ const formFields = [
 
 const Register = ({ navigation }) => {
     const navigateToLogin = () => navigation.navigate('Login');
-
+    const [current, setCurrent] = useState("producer");
     return (
         <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
             {formFields.map((field, index) => (
@@ -22,6 +26,16 @@ const Register = ({ navigation }) => {
                     {...field}
                 />
             ))}
+            
+            <RadioButtonGroup
+                containerStyle={{ marginBottom: 10 }}
+                selected={current}
+                onSelected={(value) => setCurrent(value)}
+                radioBackground="black"
+            >
+                <RadioButtonItem value="producer" label="Producer" />
+            </RadioButtonGroup>
+
             <FormButton 
                 buttonTitle="Create account"
             />

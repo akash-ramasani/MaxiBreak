@@ -17,7 +17,7 @@ const Login = React.memo(({ navigation }) => {
   return (
     <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.header}>
-        <Text style={styles.headerText}>Maxi Break</Text>
+        <Text style={styles.headerText}>Production House</Text>
       </View>
 
       <FormInput

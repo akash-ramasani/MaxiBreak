@@ -12,12 +12,13 @@ import ForgotPassword from '../screens/Auth/ForgotPassword';
 import Register from '../screens/Auth/Register';
 import Home from '../screens/HomeScreen';
 import Account from '../screens/AccountScreen';
+import Main from '../screens/MainScreen'
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 // Constants
-const ICONS = { Home: 'house', Account: 'user' };
+const ICONS = { Home: 'house', Account: 'user', Main: 'user' };
 const TAB_BAR_STYLE = { height: windowHeight / 15, position: 'relative' };
 const TAB_BAR_LABEL_STYLE = { fontFamily: 'RobotoSlab_400Regular' };
 const ACTIVE_TINT_COLOR = '#FF5A5F';
@@ -52,12 +53,13 @@ const MainStack = () => (
   >
     <Tab.Screen name="Home" component={Home} />
     <Tab.Screen name="Account" component={Account} />
+    <Tab.Screen name="Main" component={Main} />
   </Tab.Navigator>
 );
 
 // App Component
 const App = () => {
-  const isAuthenticated = !false; // Replace with actual authentication logic
+  const isAuthenticated = !true; // Replace with actual authentication logic
   return (
     <NavigationContainer>
       <StatusBar style="dark" backgroundColor="#ffffff" animated />
